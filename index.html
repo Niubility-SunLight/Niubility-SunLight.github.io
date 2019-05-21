@@ -1,15 +1,407 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>文档标题</title>
+    <meta charset="utf-8">
+    <title>新船帮年会邀请函</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="../pics/1.jpg" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../dist/css/swiper.min.css">
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .swiper-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .last #container {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+
+        }
+
+        .last .map-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* height: 60px; */
+            background: #fff;
+            display: flex;
+            width: 100%;
+            z-index: 999;
+            background: #fff;
+            /* padding: 14px; */
+            box-sizing: border-box;
+            justify-content: space-between;
+        }
+
+        .map-btn .title {
+            width: 100px;
+            text-align: left;
+        }
+
+        .map-btn .name1 {
+            width: 100%;
+            font-size: 16px;
+            color: #000;
+            font-family: '微软雅黑';
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .map-btn .name2 {
+            color: rgb(147, 147, 147);
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .map-btn .btn1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(22, 149, 255);
+            width: 100px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            box-sizing: border-box;
+            padding: 10px 14px;
+            border-radius: 3px;
+        }
+
+        .map-btn .btn1 .icon {
+            width: 18px;
+            height: 18px;
+            background: url('../images/plane.svg')no-repeat center;
+            background-size: contain;
+            margin-right: 8px;
+        }
+
+        .arrow {
+            z-index: 9999;
+            ;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            animation: mymove 1s infinite;
+            -webkit-animation: mymove 1s infinite;
+            /*Safari and Chrome*/
+        }
+
+        .arrow img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes mymove {
+            from {
+                bottom: 0px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 10px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes mymove
+
+        /*Safari and Chrome*/
+            {
+            from {
+                bottom: 0px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 10px;
+                opacity: 1;
+            }
+        }
+
+        /* music */
+        @-webkit-keyframes reverseRotataZ {
+            0% {
+                -webkit-transform: rotateZ(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateZ(-360deg);
+            }
+        }
+
+        @-webkit-keyframes rotataZ {
+            0% {
+                -webkit-transform: rotateZ(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotateZ(360deg);
+            }
+        }
+
+        #musicControl {
+            position: fixed;
+            right: 10px;
+            top: 20px;
+            margin-top: 0;
+            display: inline-block;
+            z-index: 99999999
+        }
+
+        #musicControl a {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            background: url('../images/play.png') no-repeat;
+            background-size: 100%;
+        }
+
+        #musicControl a audio {
+            width: 100%;
+            height: 56px;
+        }
+
+        #musicControl a.stop {
+            background-position: left bottom;
+        }
+
+        #musicControl a.on {
+            background-position: 0px 1px;
+            -webkit-animation: reverseRotataZ 1.2s linear infinite;
+        }
+
+        #music_play_filter {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999998;
+        }
+    </style>
 </head>
- 
+
 <body>
-<h1>欢迎访问我的主页</h1>
-<p>我的服务器地址是：https://niublity.github.io</p>
-<p>仓库第一个名字的前缀：必须和github账号名字一样</p>
-<h1>tijiao</h1>
+    <span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music(event)">
+            <audio id="musicfx" loop="loop" autoplay="autoplay">
+                <source src="../mp3/song.ogg" type="audio/ogg">
+                <source src="../mp3/song.m4a" type="audio/mpeg">
+                <source src="../mp3/song.mp3" type="audio/mpeg">
+            </audio>
+        </a>
+    </span>
+
+    <!-- Swiper -->
+    <div style="display:none;"><img src="../pics/1.jpg" alt="" /></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../images/10.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/20.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/30.png" alt="">
+            </div>
+            <!-- <div class="swiper-slide ">
+                <img src="../images/2.jpg" alt="" id="centerPic">
+            </div> -->
+            <div class="swiper-slide last">
+                <div id="container">
+                    <div class="map-btn">
+                        <!-- <div class="title">
+                            <div class="name1">微山县东风西路</div>
+                            <div class="name2">微山县东风西路8-16</div>
+                        </div>
+                        <div class="btn1">
+                            <div class="icon"></div>
+                            <div class="name">去这里</div>
+                        </div> -->
+                    </div>
+                </div>
+                <img src="../images/40.png" alt="">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <!--         <div class="swiper-pagination"></div> -->
+    </div>
+    <div class="arrow">
+        <img src="../images/arrow.svg" alt="">
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="../dist/js/swiper.min.js"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.12&key=30a94730462dbce1a87e2f3f8cdf9289"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+        //  music
+        function play_music(e) {
+            console.log(e);
+            let playOn = document.getElementsByClassName('on');
+            let audio = document.querySelector('audio');
+            let mc_play = document.querySelector('#mc_play');
+            let music_play_filter = document.querySelector('#music_play_filter');
+            if (playOn.length > 0) {
+                audio.pause();
+                mc_play.setAttribute('class', 'stop');
+            } else {
+                audio.play();
+                mc_play.setAttribute('class', 'on');
+            }
+
+            //music_play_filter.style.display='none';
+            e.stopPropagation(); //阻止冒泡
+        }
+
+        //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+        document.addEventListener('DOMContentLoaded', function () {
+            function audioAutoPlay() {
+                var audio = document.getElementById('musicfx');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+            //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+            // document.addEventListener('touchstart', function () {
+            //     function audioAutoPlay() {
+            //         var audio = document.getElementById('musicfx');
+            //             audio.play();
+            //     }
+            //     audioAutoPlay();
+            // });
+
+    </script>
+    <script>
+        function autoPlayVideo() {
+            wx.config({
+                debug: false,
+                appId: "",
+                timestamp: 1,
+                nonceStr: "",
+                signature: "",
+                jsApiList: []
+            });
+            wx.ready(function () {
+                var autoplayVideo = document.getElementById("audio");
+                autoplayVideo.play()
+            })
+        };
+        autoPlayVideo();
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            direction: 'vertical'
+        });
+        var map = new AMap.Map("container", {
+            resizeEnable: true,
+            center: [117.111335,34.805857],
+            zoom: 16
+        });
+        var marker = new AMap.Marker({
+            position: new AMap.LngLat(117.111335,34.805857), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+        });
+
+        // 将创建的点标记添加到已有的地图实例：
+        map.add(marker);
+        // var btn = document.querySelector(".map-btn");
+        var btn = document.querySelector("#container")
+        console.log(btn)
+        btn.addEventListener('click', function () {
+            window.location.href =
+                "http://uri.amap.com/marker?position=117.111335,34.805857&name='微山县东风西路'";
+        })
+
+        function GetRequest2(key) {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            var value = theRequest[key];
+            return value;
+        }
+        // var centerPic = document.getElementById('centerPic');
+        // var imgSrc = '../pics/' + GetRequest2('name') + '.jpg';
+        // centerPic.setAttribute('src', imgSrc);
+    </script>
+
 </body>
- 
+
 </html>
