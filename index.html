@@ -72,7 +72,15 @@
             background: #fff;
 
         }
-
+        .mask{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+            z-index: 2000;
+        }
         .last .map-btn {
             position: absolute;
             bottom: 0;
@@ -273,7 +281,8 @@
             </div> -->
             <div class="swiper-slide last">
                 <div id="container">
-                    <div class="map-btn">
+                    <div class="mask"></div>
+                    <!-- <div class="map-btn"> -->
                         <!-- <div class="title">
                             <div class="name1">微山县东风西路</div>
                             <div class="name2">微山县东风西路8-16</div>
@@ -282,7 +291,7 @@
                             <div class="icon"></div>
                             <div class="name">去这里</div>
                         </div> -->
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <img src="../images/40.png" alt="">
             </div>
@@ -377,12 +386,13 @@
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
         // var btn = document.querySelector(".map-btn");
-        var btn = document.querySelector("#container")
-        console.log(btn)
+        var btn = document.querySelector(".mask")
+        
         btn.addEventListener('click', function () {
+            console.log(btn)
             window.location.href =
                 "http://uri.amap.com/marker?position=117.111335,34.805857&name='微山县东风西路'";
-        })
+        },true)
 
         function GetRequest2(key) {
             var url = location.search;
