@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>新船帮年会邀请函</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
+    <meta name=”x5-fullscreen” content=”true”> 
+    <meta name=”full-screen” content=”yes”>  
     <link rel="shortcut icon" href="../pics/1.jpg" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="../dist/css/swiper.min.css">
@@ -79,12 +80,12 @@
             background-image: url("/images/40.png");
             background-size: 100% 100%;
         } */
-
+        
         .last #container {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            top: 65%;
+            width: 50%;
+            height: 15%;
+            top: 66%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: #fff;
@@ -406,10 +407,10 @@
         // var btn = document.querySelector(".map-btn");
         var btn = document.querySelector(".mask")
         
-        btn.addEventListener('click', function () {
-            console.log(btn)
-            window.location.href =
-                "http://uri.amap.com/marker?position=117.111335,34.805857&name='微山县东风西路'";
+        btn.addEventListener('click', function (e) {
+            console.log(e)
+            // window.location.href =
+            //     "http://uri.amap.com/marker?position=117.111335,34.805857&name='微山县东风西路'";
         },true)
 
         function GetRequest2(key) {
