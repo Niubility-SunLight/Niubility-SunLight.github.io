@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name=”x5-fullscreen” content=”true”> 
     <meta name=”full-screen” content=”yes”>  
-    <link rel="shortcut icon" href="../pics/1.jpg" />
+    <link rel="shortcut icon" href="./images/index.png" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="../dist/css/swiper.min.css">
     <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
@@ -64,22 +64,6 @@
             /* height: 100%; */
             
         }
-        /* #slide1{
-            background-image: url("/images/10.png");
-            background-size: 100% 100%;
-        }
-        #slide2{
-            background-image: url("/images/20.png");
-            background-size: 100% 100%;
-        }
-        #slide3{
-            background-image: url("/images/30.png");
-            background-size: 100% 100%;
-        }
-        #slide4{
-            background-image: url("/images/40.png");
-            background-size: 100% 100%;
-        } */
         
         .last #container {
             position: absolute;
@@ -272,7 +256,7 @@
         }
     </style>
 </head>
-<div style="display:none;"><img src="/images/index.png" alt=""></div>
+<div style="display:none;"><img src="./images/index.png" alt=""></div>
 <body>
     <span id="musicControl">
         <a id="mc_play" class="on" onclick="play_music(event)">
@@ -333,7 +317,7 @@
     <script>
         //  music
         function play_music(e) {
-            console.log(e);
+            // console.log(e);
             let playOn = document.getElementsByClassName('on');
             let audio = document.querySelector('audio');
             let mc_play = document.querySelector('#mc_play');
