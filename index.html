@@ -57,7 +57,7 @@
             -webkit-align-items: center;
             align-items: center;
             overflow: hidden;
-            background: #000;
+            background: hsl(344, 100%, 35%)
         }
 
         .swiper-slide img {
@@ -385,8 +385,9 @@
             pagination: '.swiper-pagination',
             paginationClickable: true,
             direction: 'vertical',
-            loop: true
+            loop: false
         });
+        console.log(document.getElementsByClassName("container"))
         var map = new AMap.Map("container", {
             resizeEnable: true,
             center: [120.3089300000, 30.4005700000],
