@@ -69,11 +69,11 @@
         #container {
             position: absolute;
             /* width: 237px; */
-            width: 63.2%;
+            width: 79.2%;
             /* height: 90.5px; */
-            height: 13.568%;
+            height: 37.568%;
             /* top: 398px; */
-            top: 59.67%;
+            top: 27.67%;
             left: 50%;
             transform: translateX(-50%);
             background: #fff;
@@ -87,10 +87,10 @@
 
         .title-img {
             /* width: 176px !important; */
-            width: 46.933% !important;
+            width: 80% !important;
             position: absolute;
             /* top: 88.5px; */
-            top: 13.267%;
+            top: 16.267%;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -107,10 +107,10 @@
 
         .time-img {
             /* width: 262px !important; */
-            width: 69.866% !important;
+            width: 71.866% !important;
             position: absolute;
             /* bottom: 73.5px; */
-            bottom:11.019%;
+            bottom:18.019%;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -312,13 +312,7 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" id="slide1">
-                <img src="../images/10.png" alt="">
-            </div>
-            <div class="swiper-slide" id="slide2">
-                <img src="../images/20.png" alt="">
-            </div>
-            <div class="swiper-slide" id="slide3">
-                <img src="../images/30.png" alt="">
+                <img src="../images/1.png" alt="">
             </div>
             <div class="swiper-slide last" id="slide4">
                 <div class="imageBG-container">
@@ -327,7 +321,6 @@
                     </div>
                     <img src="../images/bg.png" alt="">
                     <img class="title-img" src="../images/title.png" alt="">
-                    <img class="img-img" src="../images/img.png" alt="">
                     <img class="time-img" src="../images/time.png" alt="">
                 </div>
                 <!--   -->
@@ -396,12 +389,12 @@
         });
         var map = new AMap.Map("container", {
             resizeEnable: true,
-            center: [117.111335, 34.805857],
+            center: [120.3089300000, 30.4005700000],
             zoom: 16
         });
         console.log(map)
         var marker = new AMap.Marker({
-            position: new AMap.LngLat(117.111335, 34.805857), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+            position: new AMap.LngLat(120.3089300000, 30.4005700000), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
         });
         console.log(marker)
         // 将创建的点标记添加到已有的地图实例：
@@ -410,7 +403,7 @@
 
         btn.addEventListener('click', function (e) {
             window.location.href =
-                "http://uri.amap.com/marker?position=117.111335,34.805857&name=微山县东风西路";
+                "http://uri.amap.com/marker?position=120.3089300000,30.4005700000&name=富邦丽佳国际大酒店";
         }, true)
 
         function GetRequest2(key) {
